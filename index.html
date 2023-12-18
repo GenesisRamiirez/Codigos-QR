@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang= "en">
-  <head>
-    <meta charset ="utf-8">
-    <title>
-    </title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Your Page Title</title>
+  
     <style>
         body{
           background-color: #9e6998;
@@ -93,33 +93,27 @@
     transform: rotate(360deg);
   }
 }
-    </style>
-    <link href="style.ccs" rel="stylesheet"/>
-  </head>
-  <body>
-    <script >
-      cost AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxKuLVb8f2WEGySUBKX9jHmgtKlgUBuNlPeu4p6TimbWUHnfYf2PhmIfRbObhqgqGyW/exec";
+      <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <script>
+    const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxKuLVb8f2WEGySUBKX9jHmgtKlgUBuNlPeu4p6TimbWUHnfYf2PhmIfRbObhqgqGyW/exec";
 
     var url = document.location.href;
     var k = url.substr(url.lastIndexOf("k=")+2);
 
-    if(k)
-    {
-    fetch(AS_URL_BASE+'?k='+k)
-    .them(r => r.text())
-    .them((r) => {
-      console.log(r);
-    //document.write(r);
-    if(r)
-    {
-      document.location.replace(r);
+    if (k) {
+      fetch(AS_URL_BASE + '?k=' + k)
+        .then(r => r.text())
+        .then((r) => {
+          console.log(r);
+          if (r) {
+            document.location.replace(r);
+          }
+        })
+        .catch(err => console.error(err));
     }
-    })
-      .catch(err => console.log(err))
-    }
-      
-    </script>
-    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-  </body>
-
+  </script>
+  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</body>
 </html>
